@@ -17,6 +17,11 @@ Example:
         $ python -m mnemix.cli --port 8000
 """
 
+from mnemix.embedding import (
+    EmbeddingEngine,
+    SentenceTransformerEngine,
+    get_sentence_transformer_engine,
+)
 from mnemix.types import CacheConfig, CacheEntry, CacheResult, MetricsSnapshot
 
 __version__ = "0.1.0"
@@ -25,6 +30,9 @@ __all__ = [
     "CacheConfig",
     "CacheEntry",
     "CacheResult",
+    "EmbeddingEngine",
     "MetricsSnapshot",
+    "SentenceTransformerEngine",
     "__version__",
+    "get_sentence_transformer_engine",
 ]

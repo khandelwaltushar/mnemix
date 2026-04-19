@@ -110,6 +110,10 @@ warn_unreachable = true
 strict_equality = true
 files = ["src/mnemix"]
 
+[[tool.mypy.overrides]]
+module = ["sentence_transformers.*"]
+ignore_missing_imports = true
+
 [tool.pytest.ini_options]
 minversion = "8.0"
 testpaths = ["tests"]
