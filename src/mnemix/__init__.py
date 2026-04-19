@@ -22,6 +22,13 @@ from mnemix.embedding import (
     SentenceTransformerEngine,
     get_sentence_transformer_engine,
 )
+from mnemix.store import (
+    CacheStore,
+    InMemoryStore,
+    SimilarityIndex,
+    StoreStats,
+    cosine_similarity,
+)
 from mnemix.types import CacheConfig, CacheEntry, CacheResult, MetricsSnapshot
 
 __version__ = "0.1.0"
@@ -30,9 +37,14 @@ __all__ = [
     "CacheConfig",
     "CacheEntry",
     "CacheResult",
+    "CacheStore",
     "EmbeddingEngine",
+    "InMemoryStore",
     "MetricsSnapshot",
     "SentenceTransformerEngine",
+    "SimilarityIndex",
+    "StoreStats",
     "__version__",
+    "cosine_similarity",
     "get_sentence_transformer_engine",
 ]
