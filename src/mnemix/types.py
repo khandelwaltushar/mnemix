@@ -116,6 +116,14 @@ class CacheConfig(BaseModel):
             set explicitly on the entry.
         embedding_model: SentenceTransformer model name used by the local
             :class:`EmbeddingEngine` implementation.
+        openai_base_url: Upstream base URL for OpenAI-compatible calls.
+        anthropic_base_url: Upstream base URL for Anthropic calls.
+        namespace_header: Name of the request header from which the proxy
+            reads the per-tenant namespace.
+        default_namespace: Namespace used when the request omits
+            ``namespace_header``.
+        upstream_timeout_seconds: HTTP timeout (connect + read) for
+            forwarded upstream requests.
 
     Example:
         >>> cfg = CacheConfig(similarity_threshold=0.95)
@@ -129,6 +137,11 @@ class CacheConfig(BaseModel):
     max_cache_size: int = Field(default=10_000, gt=0)
     default_ttl: int | None = Field(default=None, gt=0)
     embedding_model: str = Field(default="all-MiniLM-L6-v2", min_length=1)
+    openai_base_url: str = Field(default="https://api.openai.com", min_length=1)
+    anthropic_base_url: str = Field(default="https://api.anthropic.com", min_length=1)
+    namespace_header: str = Field(default="X-Mnemix-Namespace", min_length=1)
+    default_namespace: str = Field(default="default", min_length=1)
+    upstream_timeout_seconds: float = Field(default=60.0, gt=0.0)
 
 
 class MetricsSnapshot(BaseModel):

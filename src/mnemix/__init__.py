@@ -23,6 +23,7 @@ from mnemix.embedding import (
     SentenceTransformerEngine,
     get_sentence_transformer_engine,
 )
+from mnemix.proxy import MetricsTracker, create_app, estimate_cost_usd
 from mnemix.store import (
     CacheStore,
     InMemoryStore,
@@ -44,6 +45,7 @@ __all__ = [
     "EmbeddingEngine",
     "InMemoryStore",
     "MetricsSnapshot",
+    "MetricsTracker",
     "NeverBypass",
     "RuleBasedBypass",
     "SentenceTransformerEngine",
@@ -51,5 +53,7 @@ __all__ = [
     "StoreStats",
     "__version__",
     "cosine_similarity",
+    "create_app",
+    "estimate_cost_usd",
     "get_sentence_transformer_engine",
 ]
