@@ -17,6 +17,7 @@ Example:
         $ python -m mnemix.cli --port 8000
 """
 
+from mnemix.bypass import AlwaysBypass, BypassClassifier, NeverBypass, RuleBasedBypass
 from mnemix.embedding import (
     EmbeddingEngine,
     SentenceTransformerEngine,
@@ -34,6 +35,8 @@ from mnemix.types import CacheConfig, CacheEntry, CacheResult, MetricsSnapshot
 __version__ = "0.1.0"
 
 __all__ = [
+    "AlwaysBypass",
+    "BypassClassifier",
     "CacheConfig",
     "CacheEntry",
     "CacheResult",
@@ -41,6 +44,8 @@ __all__ = [
     "EmbeddingEngine",
     "InMemoryStore",
     "MetricsSnapshot",
+    "NeverBypass",
+    "RuleBasedBypass",
     "SentenceTransformerEngine",
     "SimilarityIndex",
     "StoreStats",
