@@ -24,6 +24,7 @@ from mnemix.embedding import (
     get_sentence_transformer_engine,
 )
 from mnemix.proxy import MetricsTracker, create_app, estimate_cost_usd
+from mnemix.redis_store import RedisStore
 from mnemix.store import (
     CacheStore,
     InMemoryStore,
@@ -47,6 +48,7 @@ __all__ = [
     "MetricsSnapshot",
     "MetricsTracker",
     "NeverBypass",
+    "RedisStore",
     "RuleBasedBypass",
     "SentenceTransformerEngine",
     "SimilarityIndex",
