@@ -17,6 +17,14 @@ Example:
         $ python -m mnemix.cli --port 8000
 """
 
+from mnemix.types import CacheConfig, CacheEntry, CacheResult, MetricsSnapshot
+
 __version__ = "0.1.0"
 
-__all__ = ["__version__"]
+__all__ = [
+    "CacheConfig",
+    "CacheEntry",
+    "CacheResult",
+    "MetricsSnapshot",
+    "__version__",
+]
