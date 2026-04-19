@@ -225,7 +225,9 @@ def cosine_similarity(a: list[float], b: list[float]) -> float:
     nb = float(np.linalg.norm(vb))
     if na == 0.0 or nb == 0.0:
         return 0.0
-    return float(np.dot(va, vb) / (na * nb))
+    score = float(np.dot(va, vb) / (na * nb))
+    # Clamp float32 drift: identical float32 vectors can yield 1.0 + ε.
+    return max(-1.0, min(1.0, score))
 
 
 class SimilarityIndex:
